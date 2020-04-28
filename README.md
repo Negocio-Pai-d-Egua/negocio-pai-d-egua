@@ -35,8 +35,7 @@ uso de um aplicativo para gerir os negócios.
   - Roteador
   
 # Processos concluidos: 
-* App cliente: https://d5anf.glideapp.io/
-
+* Prototipo: http://j9qkc.glideapp.io
 # Integrantes do Projeto:
   - Marcos Aguiar Parente(aguiar.marcos20@gmail.com)
   - Marcelo Saldanha Filho(marcelosfilho1997@gmail.com)
