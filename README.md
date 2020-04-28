@@ -35,7 +35,7 @@ uso de um aplicativo para gerir os negócios.
   - Roteador
   
 # Processos concluidos: 
-* Prototipo: http://j9qkc.glideapp.io
+* Prototipo de alta fidelidade do app: http://j9qkc.glideapp.io
 # Integrantes do Projeto:
   - Marcos Aguiar Parente(aguiar.marcos20@gmail.com)
   - Marcelo Saldanha Filho(marcelosfilho1997@gmail.com)
