@@ -17,7 +17,7 @@ fornecidos.
 uso de um aplicativo para gerir os negócios.
   Objetivos Específicos:
     - Criar um roteador wi-fi utilizando Raspberry Pi 3;
-    - Desenvolver um aplicativo para gestão de pedidos.
+    - Desenvolver um web-site para gestão de pedidos.
     - Divulgar Estabelecimento.
     
 # Funções:
@@ -34,8 +34,6 @@ uso de um aplicativo para gerir os negócios.
   - Raspberry pi 3  
   - Roteador
   
-# Processos concluidos: 
-* Prototipo de alta fidelidade do app: http://j9qkc.glideapp.io
 # Integrantes do Projeto:
   - Marcos Aguiar Parente(aguiar.marcos20@gmail.com)
   - Marcelo Saldanha Filho(marcelosfilho1997@gmail.com)
