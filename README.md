@@ -23,12 +23,11 @@ uso de um aplicativo para gerir os negócios.
 # Funções:
   * App para cliente do estabelecimento:    
     - Cardápio
-    - Sistema para propagandas selecionadas
-    - Chat para usuários cadastrados no app
+    - Selecionar forma de pagamento
     
   * App para o dono do estabelecimento:    
-    - Gráfico de vendas mensal
-    - Calendário de venda diária
+    - Confirmação de pedidos
+    - Lista dos pedidos
     
 # Utilitários:
   - Raspberry pi 3  
