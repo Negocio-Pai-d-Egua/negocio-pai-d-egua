@@ -21,13 +21,9 @@ uso de um aplicativo para gerir os negócios.
     - Divulgar Estabelecimento.
     
 # Funções:
-  * App para cliente do estabelecimento:    
+  * Website para cliente do estabelecimento:    
     - Cardápio
     - Selecionar forma de pagamento
-    
-  * App para o dono do estabelecimento:    
-    - Confirmação de pedidos
-    - Lista dos pedidos
     
 # Utilitários:
   - Raspberry pi 3  
