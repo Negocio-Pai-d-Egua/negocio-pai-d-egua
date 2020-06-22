@@ -1,0 +1,21 @@
+
+body{
+   margin: 0px;
+   padding: 0px;
+   vertical-align: initial;
+}
+h1{
+   text-align: left;
+}
+form{
+   text-align: justify;
+}
+
+div{
+   display: block;
+   width: 30%
+}
+
+label{
+   text-align: center;
+}
