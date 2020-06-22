@@ -18,7 +18,6 @@ uso de um aplicativo para gerir os negócios.
   Objetivos Específicos:
     - Criar um roteador wi-fi utilizando Raspberry Pi 3;
     - Desenvolver um web-site para gestão de pedidos.
-    - Divulgar Estabelecimento.
     
 # Funções:
   * Website para cliente do estabelecimento:    
