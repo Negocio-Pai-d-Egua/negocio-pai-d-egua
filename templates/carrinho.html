@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="../N/static/css/home.css"/>
 </head>
 <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 2px solid black;
+    }
+      
     .button {
         border: none;
         color: white;
@@ -26,103 +34,63 @@
         background-color: #008CBA;
     }
 
-    main {
-    margin: 0 auto;
-    margin-top: 60px;
-    width: 980px;
-    position: relative;
-    }
-
-    .content {
-      background-color: #eee;
-      padding-bottom: 50px;
-      border-radius: 8%;
-
-    }
-
-    .header{
-      padding-bottom: 30px;
-    }
-
-    .header-2 {
-      padding-bottom: 5px;
-      text-align: center;
-    }
-
-    .header-2 h1 {
-      font-size: 30px;
-      padding-bottom: 10px;
-    }
-
-    .table {
-      width: 980px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #fff;
-      padding-bottom: 40%;
-    }
-
-    .bt-finalizar{
-      position: center;
-    }
-
 </style>
 
-  <body background="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQv1pY64qwLmdh_UXw-6JNIeINd-TbFA9dIic9jmGD6PsVi8NTU&usqp=CAU">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Negocio Pai d'Egua</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Cardápio </a>
+  <body style="background-color: gainsboro;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <img src="../static/image/Negocio - Copia.png" alt="logo" style="width: 40px;" >
+      </a>
+      
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li>
+          <a class="navbar-brand" href="#">Negocio Pai d'Egua</a>   
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="carrinho"> Carrinho <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Cardápio Digitals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Carrinho<span class="sr-only">(current)</span></a>
         </li>
       </ul>
-    </div>
     </nav>
-
     <main>
-      <div class="content">
+      <div class="content" style="text-align: center;">
         <div class="header"></div>
-        <div class="header-2">
-          <h1>Carrinho</h1>
+        <div class="header-2" style="margin-top: 5%;">
+          <h1>Seus Pedidos</h1>
         </div>
         <div class="">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Prato</th>
-                <th scope="col">Preço</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for produto in carrinho %}
-              <tr>
-                  <td>{{produto.prato}}</td>
-                  <td>{{produto.preco}}</td>
-              </tr>
-              {% endfor %}
-              <tr>
-                  <td>TOTAL</td>
-                  <td>{{total}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div> 
+          <center>
+            <table class="table" style="background-position: center; width: 50%; table-layout: fixed; text-align: center;">
+              <thead style="background-color: darkslategray;">
+                <tr>
+                  <th scope="col" style="color:lightgoldenrodyellow;">Prato</th>
+                  <th scope="col" style="color:lightgoldenrodyellow;" >Preço</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for produto in carrinho %}
+                <tr>
+                    <td>{{produto.prato}}</td>
+                    <td>{{produto.preco}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>TOTAL</td>
+                    <td>{{total}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </center>          
+        </div>
 
         <div>
           <form  action="formulario" method="post">
             <center>
-              <input value="Finalizar Pedido" type="submit" class="btn btn-primary"/>
+              <input value="Comprar" type="submit" class="btn btn-primary"/>
             </center>
           </form>
         </div>

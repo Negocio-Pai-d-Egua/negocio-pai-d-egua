@@ -1,19 +1,22 @@
 body{
-    background-color: #f5f6f8fd;
-}
-img{
-    height: 250px ;
+    background-color:gainsboro;
 }
 
 header {
     margin: 0 auto;
     position: relative;
     width: 980px;
-    background-color: rgba(12, 7, 1, 0.493);
     padding-bottom: 25px;
-    color: #fff;
+    color: black;
 }
 
 header h1 {
     padding-top: 20px;
 }
+
+.card img{
+    height: 200px;
+    width: auto;
+}
+
+
