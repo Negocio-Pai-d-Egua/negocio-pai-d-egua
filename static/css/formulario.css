@@ -1,21 +1,111 @@
 
-body{
-   margin: 0px;
-   padding: 0px;
-   vertical-align: initial;
-}
-h1{
-   text-align: left;
-}
-form{
-   text-align: justify;
+html {
+   font-size: 62,5%;
 }
 
-div{
+html, body{
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+   background:gainsboro;
+}
+
+.container-body{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.1fr 5fr 0.4fr; 
+   grid-template-areas: "header header"
+                       "main main"
+                       "footer footer";
+}
+
+
+header {
+   background-color: #343A40;
+   grid-area: header;
+}
+
+.container-header{
+   height: 100%;
+}
+
+main{
+   width: 100%;
+   border-bottom: 20.0rem;
+   background: gainsboro;
+   justify-items: center;
+   grid-area: main;
+}
+
+
+
+footer{
+   background-color: #343a40;
+   grid-area: footer;
+}
+
+/* NavBar */
+
+nav a{
+   font-size: 1.3rem;
+}
+
+#logo {
+   font-size: 1.4rem;
+}
+
+/*/////////////
+   FORMULÁRIO 
+/////////////*/
+
+.form-position{
+   display: grid;
+   margin: 0;
+
+   width: 100%;
+
+   justify-items: center;
+   align-items: center;
+}
+
+#titulo {
+/*    justify-self: center;
+ */   text-align: center;
+   color: black;
+   font-size: 3.0rem;
+ }
+
+
+/* h1{
+   text-align: left;
+} */
+form{
+   justify-self: center;
+   text-align: justify;
+   width: 80%;
+}
+
+/* div{
    display: block;
    width: 30%
-}
+} */
 
 label{
    text-align: center;
 }
+
+/* media queries */
+@media (max-width: 768px) {
+   html{
+       font-size:65%;
+   }
+     
+ } 
+ @media (max-width: 425px) {
+   html{
+       font-size:67%;
+   }
+   
+}    
