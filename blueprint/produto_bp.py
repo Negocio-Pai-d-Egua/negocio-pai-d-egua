@@ -7,14 +7,14 @@ produto_bp= Blueprint("produto", __name__, template_folder="templates")
 @produto_bp.route("/create_produto", methods= ["post"])
 def create_produto():
     ps= ProdutoSchema()
-    carrinho_id= int(request.cookies.get("carrinho_id"))
-    carrinho_query= Carrinho.query.filter(Carrinho.id== carrinho_id).first()
+    #carrinho_id= int(request.cookies.get("carrinho_id"))
+    #carrinho_query= Carrinho.query.filter(Carrinho.id== carrinho_id).first()
     produto= request.json
     produto= ps.load(produto)
     current_app.db.session.add(produto)
-    carrinho_query.produtos.append(produto)
+    #carrinho_query.produtos.append(produto)
     current_app.db.session.commit()
-    return ...
+    return "Ok"
 
 @produto_bp.route("/read_produto")
 def read_produto():

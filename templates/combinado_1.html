@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Combinado 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/css/home.css"/>
+</head>
+<style>
+
+  html {
+    font-size: 62,5%;
+  }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background:gainsboro;
+  }
+
+  .container-body{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 5fr 0.3fr; 
+    grid-template-areas: "header header"
+                        "main main"
+                        "footer footer";
+  }
+
+
+  header {
+    background-color: #343A40;
+    grid-area: header;
+  }
+
+  .container-header{
+    height: 100%;
+  }
+
+  main{
+    width: 100%;
+    border-bottom: 20.0rem;
+    background: gainsboro;
+    justify-content: center;
+    grid-area: main;
+  }
+
+
+
+  footer{
+    background-color: #343a40!important;
+    grid-area: footer;
+  } 
+
+  #logo {
+    font-size: 1.4rem;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button1 {
+    background-color: #4CAF50;
+  }
+  .button2 {
+    background-color: #008CBA;
+  }
+
+  main{
+    width: 100%;
+    border-bottom: 20.0rem;
+    background: gainsboro;
+    justify-content: center;
+    grid-area: main;
+}
+
+
+
+  .content {
+    background-color: #eee;
+    padding-bottom: 50px;
+    border-radius: 8%;
+  }
+
+  
+
+  .container-cards {
+    width: 100%;
+    max-width: 980px;
+    margin-right: 0;
+
+    display:grid;
+    grid-template-columns: 1fr;
+
+
+    justify-items: center;
+    align-items: center;
+
+    padding-bottom: 10rem;
+  } 
+
+  .cartao {
+    border-top-left-radius:2rem;
+    border-top-right-radius:2rem;
+    border-bottom-left-radius:2rem;
+    border-bottom-right-radius:2rem;
+
+
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30.0rem;
+    grid-gap: 3.0rem;
+
+
+
+  }
+
+  .bx-titulo{
+    border-top-left-radius:2rem;
+    border-top-right-radius:2rem;
+    text-align: center;
+    background-color: #343A40;
+  }
+
+  #titulo {
+    color: white;
+    font-size: 3.0rem;
+  }
+
+  #descricao {
+    font-size: 2.5rem;
+  }
+
+  #descricao-content {
+    font-size: 1.4rem;
+  }
+
+  .cartao img{
+    height: 14.0rem;
+    width: 100%;
+  }
+
+  #button-compra{
+    font-size: 1.3rem;
+  }
+
+  /* media queries */
+  @media (max-width: 768px) {
+    html{
+        font-size:65%;
+    }
+      
+  } 
+  @media (max-width: 425px) {
+    html{
+        font-size:67%;
+    }
+    
+      
+  } 
+  
+    
+
+</style>
+
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQv1pY64qwLmdh_UXw-6JNIeINd-TbFA9dIic9jmGD6PsVi8NTU&usqp=CAU">
+  <div class="container-body">
+  
+    <header>
+      <div class=".container-fluid container-header">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <!-- Brand/logo -->
+          <a class="navbar-brand" href="#">
+            <img src="../static/image/Negocio - Copia.png" alt="logo" style="width: 50px;" >
+          </a>
+          <a class="navbar-brand" id="logo" href="#">
+            Negócio Pai d'Egua
+          </a>   
+          
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Cardápio Digital<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carrinho">Lista de Pedidos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <main>
+      <div class="container-cards "><!-- "content" -->
+        <br>
+        <div class="cartao">
+          <div class="bx-titulo">
+            <h1>
+                <p id="titulo">{{combinado}}</p>
+            </h1>
+          </div>
+          <p>
+            <center>
+              <img src={{src}}>
+              <br><br>
+              <h2 id="descricao">Detalhes:</h2>
+              <p class="card-text" style="font-size:30px" id="descricao-content">{{descricao}}</p>
+              <br>
+              <h1>R$ {{preco}}</h1>
+              <form action="validacao_compra" method="post" enctype="multipart/form-data">
+                <input type="text" hidden value="{{produto_id}}" name="produto_id"/><br>
+                <input type="submit" value="Comprar" class="btn btn-primary" id="button-compra"/>
+              </form>
+
+            </center>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

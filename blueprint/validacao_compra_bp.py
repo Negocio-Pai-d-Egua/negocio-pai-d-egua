@@ -1,11 +1,27 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, current_app, redirect, url_for, make_response
+from config.model import Carrinho, Produto
+from requests import post
 validacao_compra_bp = Blueprint("validacao_compra", __name__, template_folder="templates")
 
 
 @validacao_compra_bp.route("/validacao_compra",methods= ["post"])
 def validacao_compra():
+    carrinho= request.cookies.get("carrinho_id")
+    produto= request.form["produto_id"] or request.cookies.get("produto_id")
+    if carrinho:
+        carrinho= Carrinho.query.filter(Carrinho.id==int(carrinho)).first()
+        produto= Produto.query.filter(Produto.id==int(produto)).first()
+        carrinho.produtos.append(produto)
+        current_app.db.session.commit()
+        return redirect(url_for("index.home"))
+    else:
+        carrinho = {"mesa": 11, "totalpreco": 0}
+        response=make_response(redirect(url_for("carrinho.create_carrinho",jcarrinho),code=307))
+        response.set_cookie("produto_id",produto)
+        return response
 
-    return ...
+
+    return "erro"
 
 @validacao_compra_bp.route("/carrinho")
 def carrinho():

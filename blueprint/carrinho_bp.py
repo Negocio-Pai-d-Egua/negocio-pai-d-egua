@@ -10,14 +10,16 @@ carrinho_bp= Blueprint("carrinho", __name__, template_folder="templates")
 def create_carrinho():
     cs= CarrinhoSchema()
     carrinho= request.json
-    pedido_query = Pedidos.query.filter(Pedidos.id == 1).first()
+    print(type(carrinho))
+    '''pedido_query = Pedidos.query.filter(Pedidos.id == 1).first()
     carrinho= cs.load(carrinho)
     current_app.db.session.add(carrinho)
     pedido_query.pedidos.append(carrinho)
     current_app.db.session.commit()
     response=make_response(cs.jsonify(carrinho))
-    response.set_cookie("carrinho_id",str(carrinho.id))
-    return response
+    response.set_cookie("carrinho_id",str(carrinho.id))'''
+    return "ok" \
+           ""
 
 @carrinho_bp.route("/read_carrinho")
 def read_carrinho():
