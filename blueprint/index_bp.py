@@ -10,6 +10,6 @@ def home():
 
 @index_bp.route("/combinado",methods= ["post"])
 def combinado():
-    produto_id= int(request.form["prato"])
-    produto_query= Produto.query.filter(Produto.id == produto_id).first()
+    produto_id = int(request.form["prato"])
+    produto_query = Produto.query.filter(Produto.id == produto_id).first()
     return render_template("combinado_1.html",combinado=produto_query.nome, preco=produto_query.preco,src=produto_query.image,descricao="kkkkkkk",produto_id=produto_id)
