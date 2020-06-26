@@ -26,7 +26,6 @@ uso de um aplicativo para gerir os negócios.
     
 # Utilitários:
   - Raspberry pi 3  
-  - Roteador
   
 # Integrantes do Projeto:
   - Marcos Aguiar Parente(aguiar.marcos20@gmail.com)
