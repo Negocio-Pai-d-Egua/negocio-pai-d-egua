@@ -40,3 +40,10 @@ def delete_produto():
     current_app.db.session.commit()
     return ...
 
+def criar_produto(novo_produto):
+    ps= ProdutoSchema()
+    produto= novo_produto
+    produto= ps.load(produto)
+    current_app.db.session.add(produto)
+    current_app.db.session.commit()
+    return produto.id
