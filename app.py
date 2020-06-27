@@ -28,7 +28,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #silence the deprecation wa
 
 config_db(app)
 config_ma(app)
-Migrate(app,app.db)
+Migrate(app, app.db)
 app.register_blueprint(index_bp)
 app.register_blueprint(carrinho_bp)
 app.register_blueprint(validacao_compra_bp)
