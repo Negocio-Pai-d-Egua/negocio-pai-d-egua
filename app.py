@@ -9,14 +9,16 @@ from blueprint.carrinho_bp import carrinho_bp
 from blueprint.validacao_compra_bp import validacao_compra_bp
 from blueprint.produto_bp import  produto_bp
 from blueprint.pedidos_bp import pedidos_bp
-app=Flask(__name__)
+
+app = Flask(__name__)
 
 cors = CORS(app, resource={r"/*": {"origins": "*"}})
 
-@app.route("/", methods=['GET'])
-def main():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+#@app.route("/", methods=['GET'])
+
+#def main():
+    #port = int(os.environ.get("PORT", 5000))
+    #app.run(host="0.0.0.0", port=port)
 
 DB_URL = 'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
 
@@ -36,4 +38,4 @@ app.register_blueprint(produto_bp)
 app.register_blueprint(pedidos_bp)
 
 if __name__ == "__main__":
-    main()
+    app.run(port=5000)
