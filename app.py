@@ -15,13 +15,9 @@ app = Flask(__name__)
 cors = CORS(app, resource={r"/*": {"origins": "*"}})
 
 
-@app.route("/deploy", methods = ['GET'])
-def deploy():
-    return "<h1>Testando deploy Github e Heroku</h1>"
-
-def main():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+#def main():
+#    port = int(os.environ.get("PORT", 5000))
+#    app.run(host="0.0.0.0", port=port)
 
 
 
@@ -43,4 +39,4 @@ app.register_blueprint(produto_bp)
 app.register_blueprint(pedidos_bp)
 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=5000)
