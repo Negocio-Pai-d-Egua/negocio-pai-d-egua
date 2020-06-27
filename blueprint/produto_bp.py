@@ -6,6 +6,7 @@ produto_bp= Blueprint("produto", __name__, template_folder="templates")
 
 @produto_bp.route("/create_produto", methods= ["post"])
 def create_produto():
+    print("teste")
     ps= ProdutoSchema()
     #carrinho_id= int(request.cookies.get("carrinho_id"))
     #carrinho_query= Carrinho.query.filter(Carrinho.id== carrinho_id).first()

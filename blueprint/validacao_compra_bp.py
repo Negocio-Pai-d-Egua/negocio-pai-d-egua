@@ -33,7 +33,9 @@ def carrinho():
         cs = CarrinhoSchema()
         carrinho = Carrinho.query.filter(Carrinho.id == int(carrinho)).first()
         send_carr = []
+        quantidade = 0
         for produto in carrinho.produtos:
+            quantidade += 1
             send_carr.append({"nome": produto.nome, "preco": produto.preco})
         return render_template("carrinho.html", carrinho=send_carr, total=carrinho.totalpreco)
     else:
@@ -47,4 +49,4 @@ def pedido_finalizado():
 
 @validacao_compra_bp.route("/formulario", methods= ["post"])
 def formulario():
-    return render_template("formulario.html")
+    return render_template("pedido_finalizado.html")

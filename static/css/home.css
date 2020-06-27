@@ -14,7 +14,7 @@ html, body{
 .container-body{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 5fr 0.3fr; 
+    grid-template-rows: 0.2fr 5fr 0.6fr; 
     grid-template-areas: "header header"
                         "main main"
                         "footer footer";
@@ -41,6 +41,7 @@ main{
 
 
 footer{
+    height:100%;
     background-color: #343a40;
     grid-area: footer;
 }
@@ -64,7 +65,7 @@ nav a{
     text-align: center;
     
     width: 100%;
-    padding-bottom: 25vh;
+    padding-bottom: 30vh;
     height: 15vh;
     
 
@@ -87,10 +88,9 @@ nav a{
  ===============*/
 
 .container-main{
-    padding-bottom: 20rem;
-    margin-right: 0;
-    width: 100%;
+    padding-bottom: 20rem;    width: 100%;
     max-width: 980px;
+    
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -98,7 +98,7 @@ nav a{
     justify-items: center;
     align-items: center;
 
-    grid-gap:3.0rem;
+    grid-gap:8.0rem;
 }
 
 
@@ -111,7 +111,6 @@ nav a{
  
 .cards {
     width: 100%;
-    max-width: 980px;
 } 
 
 .cartao {
@@ -138,6 +137,10 @@ nav a{
     html{
         font-size:65.5%;
     }
+
+    .header-2 {
+        padding-bottom: 20vh;
+    }
     
 } 
 @media (max-width: 425px) {
@@ -146,6 +149,15 @@ nav a{
     }
     
     .header-2{
-        padding-bottom: 34vh;
+        padding-bottom: 30vh;
+    }
+} 
+@media (max-width: 320px) {
+    html{
+        font-size:69%;
+    }
+    
+    .header-2{
+        padding-bottom: 38vh;
     }
 } 

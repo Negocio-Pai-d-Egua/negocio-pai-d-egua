@@ -7,9 +7,8 @@ from blueprint.carrinho_bp import carrinho_bp
 from blueprint.validacao_compra_bp import validacao_compra_bp
 from blueprint.produto_bp import  produto_bp
 from blueprint.pedidos_bp import pedidos_bp
-
 app=Flask(__name__)
-DB_URL = 'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="12131415", port="localhost", db="negocio")
+DB_URL = 'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 

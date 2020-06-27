@@ -36,10 +36,12 @@ def update_carrinho():
     current_app.db.session.commit()
     return ...
 
-@carrinho_bp.route("/delete_carrinho")
+@carrinho_bp.route("/delete_carrinho", methods=["post"])
 def delete_carrinho():
-    id = request.args.get('id')
+    id = request.json
+    print(id)
+    id = int(id["id"])
     cs = CarrinhoSchema(many=True)
     Carrinho.query.filter(Carrinho.id == id).delete()
     current_app.db.session.commit()
-    return ...
+    return "OK"
