@@ -1,4 +1,6 @@
 import os
+import settings
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_cors import CORS
 from config.model import configure as config_db
@@ -13,13 +15,15 @@ from blueprint.pedidos_bp import pedidos_bp
 app = Flask(__name__)
 
 
-DB_URL = 'postgres://luxpmkvligampc:ae64a143eff3a6c6477d28d9dd105e63e76dd28f4881f3e435134d9d4fe3aaf4@ec2-52-72-221-20.compute-1.amazonaws.com:5432/d735rkj6p1ugbl'#'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
+#DB_URL = 'postgres://luxpmkvligampc:ae64a143eff3a6c6477d28d9dd105e63e76dd28f4881f3e435134d9d4fe3aaf4@ec2-52-72-221-20.compute-1.amazonaws.com:5432/d735rkj6p1ugbl'#'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
 
-app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
+#app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 
-app.config['SECRET_KEY'] = 'secret'
+#app.config['SECRET_KEY'] = 'secret'
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #silence the deprecation warning
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #silence the deprecation warning
+
+app.config.from_pyfile(settings)
 
 config_db(app)
 config_ma(app)
@@ -29,6 +33,8 @@ app.register_blueprint(carrinho_bp)
 app.register_blueprint(validacao_compra_bp)
 app.register_blueprint(produto_bp)
 app.register_blueprint(pedidos_bp)
+
+app.cli.add_command(create_tables)
 
 
 def main():
