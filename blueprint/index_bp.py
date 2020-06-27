@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, make_response, redirect, url_for
 from config.model import Produto
 
 
@@ -13,3 +13,9 @@ def combinado():
     produto_id = int(request.form["prato"])
     produto_query = Produto.query.filter(Produto.id == produto_id).first()
     return render_template("combinado_1.html", combinado=produto_query.nome, preco=produto_query.preco,src=produto_query.image,descricao="(Descrição do produto.)", produto_id=produto_id)
+
+@index_bp.route("/mesa/<m>")
+def mesa(m):
+    response = make_response(redirect(url_for("index")))
+    response.set_cookie("mesa", m)
+    return response

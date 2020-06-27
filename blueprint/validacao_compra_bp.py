@@ -22,7 +22,9 @@ def validacao_compra():
         current_app.db.session.commit()
         return redirect(url_for("index.home"))
     else:
-        carrinho = {'mesa': 11, 'totalpreco': '0'}
+        mesa = request.cookies.get("mesa")
+        mesa = int(mesa)
+        carrinho = {'mesa': mesa, 'totalpreco': '0'}
         response = make_response(redirect(url_for("carrinho.create_carrinho", carrinho=carrinho), code=307))
         response.set_cookie("produto_id",produto)
         return response
