@@ -4,6 +4,7 @@ import settings
 from flask import Flask, render_template, request, redirect, url_for
 from flask_cors import CORS
 from config.model import configure as config_db
+from config.model import create_tables
 from flask_migrate import Migrate
 from config.serealizer import configure as config_ma
 from blueprint.index_bp import index_bp
