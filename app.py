@@ -11,7 +11,6 @@ from blueprint.index_bp import index_bp
 from blueprint.carrinho_bp import carrinho_bp
 from blueprint.validacao_compra_bp import validacao_compra_bp
 from blueprint.produto_bp import  produto_bp
-from blueprint.pedidos_bp import pedidos_bp
 
 app = Flask(__name__)
 
@@ -32,8 +31,6 @@ app.register_blueprint(index_bp)
 app.register_blueprint(carrinho_bp)
 app.register_blueprint(validacao_compra_bp)
 app.register_blueprint(produto_bp)
-app.register_blueprint(pedidos_bp)
-
 app.cli.add_command(create_tables)
 
 
