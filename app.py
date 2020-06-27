@@ -14,11 +14,10 @@ app = Flask(__name__)
 
 cors = CORS(app, resource={r"/*": {"origins": "*"}})
 
-#@app.route("/", methods=['GET'])
-
-#def main():
-    #port = int(os.environ.get("PORT", 5000))
-    #app.run(host="0.0.0.0", port=port)
+@app.route("/", methods = ['GET'])
+def main():
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
 DB_URL = 'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
 
@@ -38,4 +37,4 @@ app.register_blueprint(produto_bp)
 app.register_blueprint(pedidos_bp)
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    main()
