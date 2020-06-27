@@ -12,14 +12,6 @@ from blueprint.pedidos_bp import pedidos_bp
 
 app = Flask(__name__)
 
-cors = CORS(app, resource={r"/*": {"origins": "*"}})
-
-
-def main():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-
-
 
 DB_URL = 'postgres://luxpmkvligampc:ae64a143eff3a6c6477d28d9dd105e63e76dd28f4881f3e435134d9d4fe3aaf4@ec2-52-72-221-20.compute-1.amazonaws.com:5432/d735rkj6p1ugbl'#'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
 
@@ -37,6 +29,13 @@ app.register_blueprint(carrinho_bp)
 app.register_blueprint(validacao_compra_bp)
 app.register_blueprint(produto_bp)
 app.register_blueprint(pedidos_bp)
+
+
+def main():
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
+cors = CORS(app, resource={r"/*": {"origins": "*"}})
 
 if __name__ == "__main__":
     main()
