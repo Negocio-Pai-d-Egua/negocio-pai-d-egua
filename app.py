@@ -14,9 +14,6 @@ app = Flask(__name__)
 
 cors = CORS(app, resource={r"/*": {"origins": "*"}})
 
-#@app.route("/", methods=["GET"])
-#def index():
-#   return "<h1>Hello World</h1>"
 
 @app.route("/deploy", methods = ['GET'])
 def deploy():
@@ -46,4 +43,4 @@ app.register_blueprint(produto_bp)
 app.register_blueprint(pedidos_bp)
 
 if __name__ == "__main__":
-    main()
+    app.run(port=5000)
