@@ -46,26 +46,8 @@
         </div>
         <div class="">
           <center>
-            <!-- <table class="table" style="background-position: center; width: 50%; table-layout: fixed; text-align: center;">
-              <thead style="background-color: darkslategray;">
-                <tr>
-                  <th scope="col" style="color:lightgoldenrodyellow;">Prato</th>
-                  <th scope="col" style="color:lightgoldenrodyellow;" >Preço</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for produto in carrinho %}
-                <tr>
-                    <td>{{produto.prato}}</td>
-                    <td>{{produto.preco}}</td>
-                </tr>
-                {% endfor %}
-                <tr>
-                    <td>TOTAL</td>
-                    <td>{{total}}</td>
-                </tr>
-              </tbody>
-            </table> -->
+
+            {{ carrinhos["Mesa 1"]["situacao"]  }}
             <div class="container">
                 <a href="#mesa1" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 1 (Pedido Finalizado)</a>
                 <div id="mesa1" class="collapse">

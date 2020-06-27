@@ -32,7 +32,7 @@ def validacao_compra():
     else:
         mesa = request.cookies.get("mesa")
         mesa = int(mesa)
-        carrinho = {'mesa': mesa, 'totalpreco': '0'}
+        carrinho = {'mesa': mesa, 'totalpreco': '0', "situacao":"Pendente"}
         response = make_response(redirect(url_for("carrinho.create_carrinho", carrinho=carrinho), code=307))
         response.set_cookie("produto_id",produto)
         return response
@@ -58,10 +58,11 @@ def carrinho():
 
 @validacao_compra_bp.route("/pedido_finalizado", methods= ["post"])
 def pedido_finalizado():
-    response = make_response(render_template("pedido_finalizado.html"))
-    response.set_cookie("carrinho_id", "")
-    response.set_cookie("produto_id", "")
-    return response
+    carrinho = request.cookies.get("carrinho_id")
+    carrinho = Carrinho.query.filter(Carrinho.id == int(carrinho)).first()
+    carrinho.situacao = "Finalizado"
+    current_app.db.session.commit()
+    return render_template("pedido_finalizado.html")
 
 @validacao_compra_bp.route("/formulario", methods= ["post"])
 def formulario():

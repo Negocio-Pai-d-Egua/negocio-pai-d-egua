@@ -12,6 +12,7 @@ class Carrinho(db.Model):
     id=db.Column(db.Integer, primary_key=True)
     mesa=db.Column(db.Integer, nullable=False)
     totalpreco= db.Column(db.String(200), nullable=False)
+    situacao = db.Column(db.String(200), nullable=False)
     produtos=db.relationship("Produto", backref="carrinho", lazy="select")
 
 

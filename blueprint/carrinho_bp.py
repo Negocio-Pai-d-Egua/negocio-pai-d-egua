@@ -50,7 +50,7 @@ def mostrar_pedido():
     carrinhos = {}
     for c in result:
         nome = "Mesa " + str(c.mesa)
-        carrinhos[nome] = {"pedidos":[], "total":c.totalpreco}
+        carrinhos[nome] = {"pedidos":[], "total":c.totalpreco, "situacao": c.situacao}
         for p in c.produtos:
             total = float(p.preco)*p.quantidade
             pedido = {"nome": p.nome, "quantidade":p.quantidade, "preco": p.preco, "total": total}
