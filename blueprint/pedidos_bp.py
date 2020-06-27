@@ -10,7 +10,7 @@ def create_pedido():
     pedidos= Pedidos()
     current_app.db.session.add(pedidos)
     current_app.db.session.commit()
-    return pedido
+    return "OK"
 
 @pedidos_bp.route("/read_pedido")
 def read_pedido():
