@@ -65,5 +65,6 @@ def limpar_carrinho():
     for p in carrinho.produtos:
         remover_produto(p.id)
     carrinho.totalpreco = "0"
+    carrinho.situacao = "Pendente"
     current_app.db.session.commit()
     return redirect(url_for("carrinho.mostrar_pedido"))

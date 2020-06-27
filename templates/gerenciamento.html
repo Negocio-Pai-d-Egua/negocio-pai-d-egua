@@ -25,16 +25,7 @@
           <a class="navbar-brand" id="logo" href="#">
             Negócio Pai d'Egua - Gestão das Mesas
           </a>
-          
-          <!-- Links -->
-          <!-- <ul class="navbar-nav">        
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cardápio Digital</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Lista de Pedidos<span class="sr-only">(current)</span></a>
-            </li>
-          </ul> -->
+
         </nav>
     </header>
 
@@ -70,12 +61,11 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 1"]["situacao"] %}
-                            <form action="/limpar_carrinho">
-                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
-                            </form>                        {% endif %}
-                        {% if "Pendentes" in carrinhos["Mesa 1"]["situacao"] %}
-                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                            <form action="/limpar_carrinho" enctype="multipart/form-data" method="get">
+                            <input type="submit" class="btn btn-danger btn-lg btn-block rounded-0"  value="Limpar Mesa"/>
+                            </form>
                         {% endif %}
+
                 </div>
                 <a href="#mesa2" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 2 ({{ carrinhos["Mesa 2"]["situacao"] }})</a>
                 <div id="mesa2" class="collapse">
@@ -101,12 +91,9 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 2"]["situacao"] %}
-                            <form action="/limpar_carrinho">
-                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
+                            <form action="/limpar_carrinho" enctype="multipart/form-data" method="get">
+                            <input type="submit" class="btn btn-danger btn-lg btn-block rounded-0"  value="Limpar Mesa"/>
                             </form>
-                        {% endif %}
-                        {% if "Pendentes" in carrinhos["Mesa 2"]["situacao"] %}
-                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
                         {% endif %}
                 </div>
                 <a href="#mesa3" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 3 ({{ carrinhos["Mesa 3"]["situacao"] }})</a>
@@ -132,12 +119,10 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 3"]["situacao"] %}
-                            <form action="/limpar_carrinho">
-                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
-                            </form>                        {% endif %}
-                        {% if "Pendentes" in carrinhos["Mesa 3"]["situacao"] %}
-                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
-                        {% endif %}                </div>
+                            <form action="/limpar_carrinho" enctype="multipart/form-data" method="get">
+                            <input type="submit" class="btn btn-danger btn-lg btn-block rounded-0"  value="Limpar Mesa"/>
+                            </form>
+                        {% endif %}               </div>
                 <a href="#mesa4" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 4 ({{ carrinhos["Mesa 4"]["situacao"] }})</a>
                 <div id="mesa4" class="collapse">
                     <table class="table table-striped">
@@ -161,12 +146,11 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 4"]["situacao"] %}
-                            <form action="/limpar_carrinho">
-                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
-                            </form>                        {% endif %}
-                        {% if "Pendentes" in carrinhos["Mesa 4"]["situacao"] %}
-                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
-                        {% endif %}                </div>
+                            <form action="/limpar_carrinho" enctype="multipart/form-data" method="get">
+                            <input type="submit" class="btn btn-danger btn-lg btn-block rounded-0" value="Limpar Mesa"/>
+                            </form>
+                        {% endif %}
+                </div>
             </div>
     
           </center>          
