@@ -54,7 +54,6 @@
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Pedido</th>
                             <th scope="col">Preço</th>
                             <th scope="col">Quantidade</th>
@@ -62,34 +61,28 @@
                           </tr>
                         </thead>
                         <tbody>
+                            {% for pedidos in carrinhos["Mesa 1"]["pedidos"] %}
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>pedidos.nome</td>
+                            <td>pedidos.preco</td>
+                            <td>pedidos.quantidade</td>
+                            <td>pedidos.total</td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                            {% endfor %}
                         </tbody>
                       </table>
-                      <a href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% if "Finalizado" in carrinhos["Mesa 1"]["situacao"] %}
+                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}
+                        {% if "Pendentes" in carrinhos["Mesa 1"]["situacao"] %}
+                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}
                 </div>
                 <a href="#mesa2" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 2 (Pedido Pendente)</a>
                 <div id="mesa2" class="collapse">
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Pedido</th>
                             <th scope="col">Preço</th>
                             <th scope="col">Quantidade</th>
@@ -97,34 +90,29 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for pedidos in carrinhos["Mesa 2"]["pedidos"] %}
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>pedidos.nome</td>
+                            <td>pedidos.preco</td>
+                            <td>pedidos.quantidade</td>
+                            <td>pedidos.total</td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                            {% endfor %}
+
                         </tbody>
                       </table>
-                      <a href="#" disabled class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% if "Finalizado" in carrinhos["Mesa 2"]["situacao"] %}
+                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}
+                        {% if "Pendentes" in carrinhos["Mesa 2"]["situacao"] %}
+                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}
                 </div>
                 <a href="#mesa3" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 3(status)</a>
                 <div id="mesa3" class="collapse">
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Pedido</th>
                             <th scope="col">Preço</th>
                             <th scope="col">Quantidade</th>
@@ -132,34 +120,27 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for pedidos in carrinhos["Mesa 3"]["pedidos"] %}
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>pedidos.nome</td>
+                            <td>pedidos.preco</td>
+                            <td>pedidos.quantidade</td>
+                            <td>pedidos.total</td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                            {% endfor %}
                         </tbody>
                       </table>
-                      <a href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
-                </div>
+                        {% if "Finalizado" in carrinhos["Mesa 3"]["situacao"] %}
+                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}
+                        {% if "Pendentes" in carrinhos["Mesa 3"]["situacao"] %}
+                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}                </div>
                 <a href="#mesa4" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 4(status)</a>
                 <div id="mesa4" class="collapse">
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Pedido</th>
                             <th scope="col">Preço</th>
                             <th scope="col">Quantidade</th>
@@ -167,28 +148,22 @@
                           </tr>
                         </thead>
                         <tbody>
+                          {% for pedidos in carrinhos["Mesa 4"]["pedidos"] %}
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>pedidos.nome</td>
+                            <td>pedidos.preco</td>
+                            <td>pedidos.quantidade</td>
+                            <td>pedidos.total</td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                            {% endfor %}
                         </tbody>
                       </table>
-                      <a href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
-                </div>
+                        {% if "Finalizado" in carrinhos["Mesa 4"]["situacao"] %}
+                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}
+                        {% if "Pendentes" in carrinhos["Mesa 4"]["situacao"] %}
+                      <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                        {% endif %}                </div>
             </div>
     
           </center>          
