@@ -52,5 +52,8 @@ def mostrar_pedido():
     carrinhos = {}
     for c in result:
         nome = "mesa_" + str(c.mesa)
-        carrinhos[nome] = {"pedidos":c.produtos}
+        carrinhos[nome] = {"pedidos":[], "total":c.totalpreco}
+        for p in c.produtos:
+            carrinhos[nome]["pedidos"].append(p.nome)
+
     return carrinhos
