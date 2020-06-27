@@ -10,7 +10,7 @@ from config.serealizer import configure as config_ma
 from blueprint.index_bp import index_bp
 from blueprint.carrinho_bp import carrinho_bp
 from blueprint.validacao_compra_bp import validacao_compra_bp
-from blueprint.produto_bp import  produto_bp
+from blueprint.produto_bp import produto_bp
 
 app = Flask(__name__)
 
