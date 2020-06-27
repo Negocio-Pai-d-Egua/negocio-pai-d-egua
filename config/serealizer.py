@@ -12,7 +12,3 @@ class ProdutoSchema(ma.ModelSchema):
 class CarrinhoSchema(ma.ModelSchema):
     class Meta:
         model= Carrinho
-
-class PedidoSchema(ma.ModelSchema):
-    class Meta:
-        model = Carrinho

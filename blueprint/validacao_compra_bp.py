@@ -13,7 +13,14 @@ def validacao_compra():
     if carrinho:
         carrinho= Carrinho.query.filter(Carrinho.id==int(carrinho)).first()
         produto= Produto.query.filter(Produto.id==int(produto)).first()
-        novo_produto = {"nome": produto.nome, "preco": produto.preco, "quantidade": produto.quantidade, "image": produto.image}
+        for p in carrinho.produtos:
+            if produto.nome == p.nome:
+                p.quantidade += 1
+                preco_total = float(carrinho.totalpreco) + float(p.preco)
+                carrinho.totalpreco = str(preco_total)
+                current_app.db.session.commit()
+                return redirect(url_for("index.home"))
+        novo_produto = {"nome": produto.nome, "preco": produto.preco, "quantidade": 1, "image": produto.image}
         id_novoproduto = criar_produto(novo_produto)
         produto= Produto.query.filter(Produto.id==id_novoproduto).first()
         preco_total = float(carrinho.totalpreco) + float(produto.preco)
@@ -21,6 +28,7 @@ def validacao_compra():
         carrinho.produtos.append(produto)
         current_app.db.session.commit()
         return redirect(url_for("index.home"))
+
     else:
         mesa = request.cookies.get("mesa")
         mesa = int(mesa)

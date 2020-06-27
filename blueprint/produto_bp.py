@@ -47,3 +47,7 @@ def criar_produto(novo_produto):
     current_app.db.session.add(produto)
     current_app.db.session.commit()
     return produto.id
+
+def remover_produto(id):
+    Produto.query.filter(Produto.id == id).delete()
+    current_app.db.session.commit()

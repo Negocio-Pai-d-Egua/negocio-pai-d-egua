@@ -7,18 +7,12 @@ def configure(app):
     app.db= db
 
 
-class Pedidos(db.Model):
-    __tablename__ = 'pedido'
-    id=db.Column(db.Integer, primary_key=True)
-    pedidos=db.relationship("Carrinho", backref="pedido", lazy="select")
-
 class Carrinho(db.Model):
     __tablename__ = 'carrinho'
     id=db.Column(db.Integer, primary_key=True)
     mesa=db.Column(db.Integer, nullable=False)
     totalpreco= db.Column(db.String(200), nullable=False)
     produtos=db.relationship("Produto", backref="carrinho", lazy="select")
-    pedido_id = db.Column(db.Integer, db.ForeignKey("pedido.id"))
 
 
 class Produto(db.Model):

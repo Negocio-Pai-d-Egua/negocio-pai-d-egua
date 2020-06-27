@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, current_app, make_response, redirect, url_for
-from config.model import Produto, Carrinho, Pedidos
+from config.model import Produto, Carrinho
 from config.serealizer import ProdutoSchema, CarrinhoSchema
+from blueprint.produto_bp import remover_produto
 import json
 
 carrinho_bp= Blueprint("carrinho", __name__, template_folder="templates")
@@ -11,11 +12,8 @@ def create_carrinho():
     cs = CarrinhoSchema()
     carrinho =request.args.get("carrinho")
     carrinho = eval(carrinho)
-    pedido_query = Pedidos.query.filter(Pedidos.id == 1).first()
     carrinho = cs.load(carrinho)
-
     current_app.db.session.add(carrinho)
-    pedido_query.pedidos.append(carrinho)
     current_app.db.session.commit()
     response=make_response(redirect(url_for("validacao_compra.validacao_compra"), code=307))
     response.set_cookie("carrinho_id",str(carrinho.id))
@@ -51,9 +49,19 @@ def mostrar_pedido():
     result = Carrinho.query.all()
     carrinhos = {}
     for c in result:
-        nome = "mesa_" + str(c.mesa)
+        nome = "Mesa " + str(c.mesa)
         carrinhos[nome] = {"pedidos":[], "total":c.totalpreco}
         for p in c.produtos:
-            carrinhos[nome]["pedidos"].append(p.nome)
+            total = float(p.preco)*p.quantidade
+            pedido = {"nome": p.nome, "quantidade":p.quantidade, "preco": p.preco, "total": total}
+            carrinhos[nome]["pedidos"].append(pedido)
 
-    return carrinhos
+    return render_template("gerenciamento.html", carrinhos=carrinhos)
+
+@carrinho_bp.route("/limpar_carrinho")
+def limpar_carrinho():
+    carrinho = request.cookies.get("carrinho_id")
+    carrinho = Carrinho.query.filter(Carrinho.id == int(carrinho)).first()
+    for p in carrinho.produtos:
+        remover_produto(p.id)
+    return redirect(url_for("carrinho.mostrar_pedido"))
