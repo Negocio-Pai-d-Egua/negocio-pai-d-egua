@@ -35,12 +35,3 @@ def delete_pedido():
     current_app.db.session.commit()
     return ...
 
-@pedidos_bp.route("/mostrar_pedido")
-def mostrar_pedido():
-    pedido = PedidoSchema()
-    result = Pedidos.query.filter(Pedidos.id == 1)
-    carrinhos = {}
-    for c in result.pedidos:
-        nome = "mesa_" + str(c.mesa)
-        carrinhos[nome] = {"pedidos":c.produtos}
-    return carrinhos

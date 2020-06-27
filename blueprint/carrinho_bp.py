@@ -44,3 +44,13 @@ def delete_carrinho(id):
     Carrinho.query.filter(Carrinho.id == id).delete()
     current_app.db.session.commit()
     return "OK"
+
+@carrinho_bp.route("/mostrar_pedido")
+def mostrar_pedido():
+    carrinho = CarrinhoSchema(many = True)
+    result = Carrinho.query.all()
+    carrinhos = {}
+    for c in result:
+        nome = "mesa_" + str(c.mesa)
+        carrinhos[nome] = {"pedidos":c.produtos}
+    return carrinhos
