@@ -70,8 +70,9 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 1"]["situacao"] %}
-                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
-                        {% endif %}
+                            <form action="/limpar_carrinho">
+                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
+                            </form>                        {% endif %}
                         {% if "Pendentes" in carrinhos["Mesa 1"]["situacao"] %}
                       <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
                         {% endif %}
@@ -100,7 +101,9 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 2"]["situacao"] %}
-                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
+                            <form action="/limpar_carrinho">
+                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
+                            </form>
                         {% endif %}
                         {% if "Pendentes" in carrinhos["Mesa 2"]["situacao"] %}
                       <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
@@ -129,8 +132,9 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 3"]["situacao"] %}
-                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
-                        {% endif %}
+                            <form action="/limpar_carrinho">
+                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
+                            </form>                        {% endif %}
                         {% if "Pendentes" in carrinhos["Mesa 3"]["situacao"] %}
                       <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
                         {% endif %}                </div>
@@ -157,8 +161,9 @@
                         </tbody>
                       </table>
                         {% if "Finalizado" in carrinhos["Mesa 4"]["situacao"] %}
-                      <a href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
-                        {% endif %}
+                            <form action="/limpar_carrinho">
+                            <input type="submit" href="/limpar_carrinho" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse" value="Limpar Mesa"/>
+                            </form>                        {% endif %}
                         {% if "Pendentes" in carrinhos["Mesa 4"]["situacao"] %}
                       <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
                         {% endif %}                </div>
