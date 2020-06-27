@@ -53,7 +53,7 @@ def pedido_finalizado():
     response = make_response(render_template("pedido_finalizado.html"))
     response.set_cookie("carrinho_id", "")
     response.set_cookie("produto_id", "")
-    return render_template("pedido_finalizado.html")
+    return response
 
 @validacao_compra_bp.route("/formulario", methods= ["post"])
 def formulario():
