@@ -49,7 +49,7 @@
 
             {{ carrinhos["Mesa 1"]["situacao"]  }}
             <div class="container">
-                <a href="#mesa1" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 1 (Pedido Finalizado)</a>
+                <a href="#mesa1" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 1 ({{ carrinhos["Mesa 1"]["situacao"] }})</a>
                 <div id="mesa1" class="collapse">
                     <table class="table table-striped">
                         <thead>
@@ -78,7 +78,7 @@
                       <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
                         {% endif %}
                 </div>
-                <a href="#mesa2" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 2 (Pedido Pendente)</a>
+                <a href="#mesa2" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 2 ({{ carrinhos["Mesa 2"]["situacao"] }})</a>
                 <div id="mesa2" class="collapse">
                     <table class="table table-striped">
                         <thead>
@@ -108,7 +108,7 @@
                       <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
                         {% endif %}
                 </div>
-                <a href="#mesa3" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 3(status)</a>
+                <a href="#mesa3" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 3 ({{ carrinhos["Mesa 3"]["situacao"] }})</a>
                 <div id="mesa3" class="collapse">
                     <table class="table table-striped">
                         <thead>
@@ -136,7 +136,7 @@
                         {% if "Pendentes" in carrinhos["Mesa 3"]["situacao"] %}
                       <a disabled href="#" class="btn btn-danger btn-lg btn-block rounded-0" data-toggle="collapse">Limpar Mesa</a>
                         {% endif %}                </div>
-                <a href="#mesa4" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 4(status)</a>
+                <a href="#mesa4" class="btn btn-primary btn-lg btn-block rounded-0" data-toggle="collapse">Mesa 4 ({{ carrinhos["Mesa 4"]["situacao"] }})</a>
                 <div id="mesa4" class="collapse">
                     <table class="table table-striped">
                         <thead>
