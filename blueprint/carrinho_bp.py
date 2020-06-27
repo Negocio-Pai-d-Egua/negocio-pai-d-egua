@@ -58,10 +58,9 @@ def mostrar_pedido():
 
     return render_template("gerenciamento.html", carrinhos=carrinhos)
 
-@carrinho_bp.route("/limpar_carrinho")
-def limpar_carrinho():
-    carrinho = request.cookies.get("carrinho_id")
-    carrinho = Carrinho.query.filter(Carrinho.id == int(carrinho)).first()
+@carrinho_bp.route("/limpar_carrinho/<id>")
+def limpar_carrinho(id):
+    carrinho = Carrinho.query.filter(Carrinho.id == int(id)).first()
     for p in carrinho.produtos:
         remover_produto(p.id)
     carrinho.totalpreco = "0"
