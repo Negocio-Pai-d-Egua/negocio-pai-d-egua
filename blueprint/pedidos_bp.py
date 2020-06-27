@@ -6,7 +6,7 @@ pedidos_bp= Blueprint("pedido", __name__, template_folder="templates")
 
 @pedidos_bp.route("/create_pedido", methods= ["post"])
 def create_pedido():
-    pedido= PedidoSchema()
+    pedido = PedidoSchema()
     pedidos= Pedidos()
     current_app.db.session.add(pedidos)
     current_app.db.session.commit()
@@ -20,8 +20,8 @@ def read_pedido():
 
 @pedidos_bp.route("/update_pedido")
 def update_pedido():
-    id= request.args.get('id')
-    pedido= PedidoSchema(many=True)
+    id = request.args.get('id')
+    pedido = PedidoSchema(many=True)
     query= Pedidos.query.filter(pedido.id==id)
     query.update(request.json)
     current_app.db.session.commit()
