@@ -2,12 +2,12 @@ from flask import Blueprint, render_template, request, current_app
 from config.model import Produto, Carrinho, Pedidos
 from config.serealizer import ProdutoSchema, CarrinhoSchema, PedidoSchema
 
-pedidos_bp= Blueprint("pedido", __name__, template_folder="templates")
+pedidos_bp = Blueprint("pedido", __name__, template_folder="templates")
 
 @pedidos_bp.route("/create_pedido", methods= ["post"])
 def create_pedido():
     pedido = PedidoSchema()
-    pedidos= Pedidos()
+    pedidos = Pedidos()
     current_app.db.session.add(pedidos)
     current_app.db.session.commit()
     return "OK"
@@ -22,7 +22,7 @@ def read_pedido():
 def update_pedido():
     id = request.args.get('id')
     pedido = PedidoSchema(many=True)
-    query= Pedidos.query.filter(pedido.id==id)
+    query = Pedidos.query.filter(pedido.id==id)
     query.update(request.json)
     current_app.db.session.commit()
     return ...
@@ -34,3 +34,13 @@ def delete_pedido():
     Pedidos.query.filter(pedido.id == id).delete()
     current_app.db.session.commit()
     return ...
+
+@pedidos_bp.route("/mostrar_pedido")
+def mostrar_pedido():
+    pedido = PedidoSchema()
+    result = Pedidos.query.filter(Pedidos.id == 1)
+    carrinhos = {}
+    for c in result.pedidos:
+        nome = "mesa_" + str(c.mesa)
+        carrinhos[nome] = {"pedidos":c.produtos}
+    return carrinhos
