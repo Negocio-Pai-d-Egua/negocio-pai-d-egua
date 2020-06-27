@@ -16,6 +16,6 @@ def combinado():
 
 @index_bp.route("/mesa/<m>")
 def mesa(m):
-    response = make_response(redirect(url_for("index")))
+    response = make_response(redirect(url_for("index.home")))
     response.set_cookie("mesa", m)
     return response
