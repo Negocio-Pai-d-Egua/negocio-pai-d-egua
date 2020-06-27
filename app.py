@@ -21,9 +21,9 @@ def main():
 
 
 
-DB_URL = 'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
+DB_URL = 'postgres://luxpmkvligampc:ae64a143eff3a6c6477d28d9dd105e63e76dd28f4881f3e435134d9d4fe3aaf4@ec2-52-72-221-20.compute-1.amazonaws.com:5432/d735rkj6p1ugbl'#'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
 
-app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
+app.config['SQLALCHEMY_DATABASE_URL'] = DB_URL
 
 app.config['SECRET_KEY'] = 'secret'
 
