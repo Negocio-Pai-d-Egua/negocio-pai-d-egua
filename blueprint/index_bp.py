@@ -26,7 +26,7 @@ def mesa(m):
 @index_bp.route("/salvando_cookie", methods= ["post"])
 def salvando_cookie():
     mesa = request.form.to_dict()
-    response = make_response(redirect(url_for("index.home"), code=307))
+    response = make_response(redirect(url_for("index.home")))
     response.set_cookie("mesa", mesa["mesa"])
     print(mesa)
     return response
