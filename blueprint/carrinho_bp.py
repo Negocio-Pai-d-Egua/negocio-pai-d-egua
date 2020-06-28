@@ -36,6 +36,9 @@ def update_carrinho():
 
 @carrinho_bp.route("/delete_carrinho/<id>", methods=["get"])
 def delete_carrinho(id):
+    carrinho = Carrinho.query.filter(Carrinho.id == int(id)).first()
+    for p in carrinho.produtos:
+        remover_produto(p.id)
     Carrinho.query.filter(Carrinho.id == int(id)).delete()
     current_app.db.session.commit()
     return "OK"
