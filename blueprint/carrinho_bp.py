@@ -4,7 +4,7 @@ from config.serealizer import ProdutoSchema, CarrinhoSchema
 from blueprint.produto_bp import remover_produto
 import json
 
-carrinho_bp= Blueprint("carrinho", __name__, template_folder="templates")
+carrinho_bp = Blueprint("carrinho", __name__, template_folder="templates")
 
 
 @carrinho_bp.route("/create_carrinho", methods= ["post"])
@@ -36,21 +36,18 @@ def update_carrinho():
 
 @carrinho_bp.route("/delete_carrinho/<id>", methods=["get"])
 def delete_carrinho(id):
-    id = int(id)
-    print(id)
-    cs = CarrinhoSchema(many=True)
-    Carrinho.query.filter(Carrinho.id == id).delete()
+    Carrinho.query.filter(Carrinho.id == int(id)).delete()
     current_app.db.session.commit()
     return "OK"
 
 @carrinho_bp.route("/mostrar_pedido")
 def mostrar_pedido():
-    carrinho = CarrinhoSchema(many = True)
+    carrinho = CarrinhoSchema(many=True)
     result = Carrinho.query.all()
     carrinhos = {}
     for c in result:
         nome = "Mesa " + str(c.mesa)
-        carrinhos[nome] = {"pedidos":[], "total":c.totalpreco, "situacao": c.situacao}
+        carrinhos[nome] = {"pedidos": [], "total": c.totalpreco, "situacao": c.situacao}
         for p in c.produtos:
             total = float(p.preco)*p.quantidade
             pedido = {"nome": p.nome, "quantidade":p.quantidade, "preco": p.preco, "total": total}
