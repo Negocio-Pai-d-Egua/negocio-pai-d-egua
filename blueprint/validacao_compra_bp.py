@@ -8,7 +8,7 @@ validacao_compra_bp = Blueprint("validacao_compra", __name__, template_folder="t
 
 @validacao_compra_bp.route("/validacao_compra",methods= ["post"])
 def validacao_compra():
-    carrinho= request.cookies.get("mesa")
+    carrinho= request.cookies.get("mesa") or request.form["mesa"]
     produto= request.form["produto_id"] or request.cookies.get("produto_id")
     if carrinho:
         carrinho= Carrinho.query.filter(Carrinho.id==int(carrinho)).first()
@@ -30,12 +30,7 @@ def validacao_compra():
         return redirect(url_for("index.home"))
 
     else:
-        mesa = request.cookies.get("mesa")
-        mesa = int(mesa)
-        carrinho = {'mesa': mesa, 'totalpreco': '0', "situacao":"Pendente"}
-        response = make_response(redirect(url_for("carrinho.create_carrinho", carrinho=carrinho), code=307))
-        response.set_cookie("produto_id",produto)
-        return response
+        return render_template("formulario.html")
 
 
     return "erro"

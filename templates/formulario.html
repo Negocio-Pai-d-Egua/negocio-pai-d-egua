@@ -33,51 +33,35 @@
         </div>
       </header>
       <main>
-        
-        <!-- 
-        <form action="pedido_finalizado" method="post" enctype="multipart/form-data">
+
+
+        <form action="/validacao_compra" method="post" enctype="multipart/form-data">
           <div class="form-position">
             <br><br>
-            <h1 id="titulo">Formulário de Pagamento</h1>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Nome Completo</label>
-              <input type="text" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu nome" required>
-            </div>
+            <h2 id="titulo">Sua mesa</h2>
+
             <div class="form-group">
               <label for="exampleFormControlSelect1">Marque o número de sua mesa</label>
               <select class="form-control" name="mesa" id="exampleFormControlSelect1" required>
                 <option>1</option>
                 <option>2</option>
-                <option>3</option>            
-              </select>
-            </div>        
-            <div class="form-group">
-              <label for="exampleFormControlSelect2">Selecione Forma de Pagamento</label>
-              <select class="form-control" name="forma_pagamento" id="exampleFormControlSelect2" required>
-                <option>Dinheiro</option>
-                <option>Cartão de Crédito</option>
-                <option>Cartão de Débito</option>            
+                <option>3</option>
+                <option>4</option>
+
               </select>
             </div>
-            <div>
-              <input type="submit"  class="btn btn-primary" value="Enviar Forma de Pagamento"></input><br><br>
-              <a href="/" class="btn btn-primary" >Cancelar pedido</a>
-            </div>   
-          </div>        
+            <div align=center>
+              <input type="submit"  class="btn btn-primary" value="Continuar"></input><br><br>
+            </div>
+          </div>
 
         </form>
-       -->
-        
-        
-        <form name="FormPagamento" id="FormPagamento" action="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html" method="post">
-        <input id="BotaoPagamento" type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-azul-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-        </form>
 
-        <br><br>
-        <?xml version="1.0" encoding="ISO-8859-1"?>
-        <session>
-          <id>620f99e348c24f07877c927b353e49d3</id>
-        </session>
+
+
+
+
+
       
 
     
