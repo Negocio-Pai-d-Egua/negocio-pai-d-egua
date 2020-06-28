@@ -48,6 +48,7 @@ def mostrar_pedido():
     carrinho = CarrinhoSchema(many=True)
     result = Carrinho.query.all()
     carrinhos = {}
+    count = 0
     for c in result:
         nome = "Mesa " + str(c.mesa)
         carrinhos[nome] = {"pedidos": [], "total": c.totalpreco, "situacao": c.situacao}
@@ -55,6 +56,9 @@ def mostrar_pedido():
             total = float(p.preco)*p.quantidade
             pedido = {"nome": p.nome, "quantidade":p.quantidade, "preco": p.preco, "total": total}
             carrinhos[nome]["pedidos"].append(pedido)
+        count += 1
+        if count == 3:
+            break
 
     return render_template("gerenciamento.html", carrinhos=carrinhos)
 
