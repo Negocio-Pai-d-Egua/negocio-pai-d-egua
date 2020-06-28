@@ -68,7 +68,7 @@ def formulario():
 @validacao_compra_bp.route("/salvando_cookie", methods= ["post"])
 def salvando_cookie():
     mesa = request.form.to_dict()
-    response = make_response(redirect(url_for("carrinho.validacao_compra"), code=307))
+    response = make_response(redirect(url_for("validacao_compra.validacao_compra"), code=307))
     response.set_cookie("mesa", mesa["mesa"])
     print(mesa)
     return response
