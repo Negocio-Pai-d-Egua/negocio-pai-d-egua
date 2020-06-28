@@ -71,7 +71,12 @@
         <div>
           <form  action="/pedido_finalizado" method="post">
             <center>
+                {% if "Pendente" in situacao %}
               <input value="Comprar" type="submit" id="bt-comprar" class="btn btn-primary"/>
+                {% endif %}
+                {% if "Finalizado" in situacao %}
+                <h3>Aguarde enquanto seu pedido está sendo preparado.</h3>
+                {% endif %}
             </center>
           </form>
         </div>
