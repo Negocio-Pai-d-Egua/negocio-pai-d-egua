@@ -57,7 +57,7 @@ def mostrar_pedido():
             pedido = {"nome": p.nome, "quantidade":p.quantidade, "preco": p.preco, "total": total}
             carrinhos[nome]["pedidos"].append(pedido)
         count += 1
-        if count == 3:
+        if count == 5:
             break
 
     return render_template("gerenciamento.html", carrinhos=carrinhos)
