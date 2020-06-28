@@ -53,7 +53,7 @@ def carrinho():
 
 @validacao_compra_bp.route("/pedido_finalizado", methods= ["post"])
 def pedido_finalizado():
-    carrinho = request.cookies.get("carrinho_id")
+    carrinho = request.cookies.get("mesa")
     carrinho = Carrinho.query.filter(Carrinho.id == int(carrinho)).first()
     carrinho.situacao = "Finalizado"
     current_app.db.session.commit()
