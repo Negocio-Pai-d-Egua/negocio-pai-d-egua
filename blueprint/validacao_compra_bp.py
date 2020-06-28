@@ -33,7 +33,7 @@ def validacao_compra():
         return redirect(url_for("index.home"))
 
     else:
-        response = make_response(render_template("formulario.html"))
+        response = make_response(redirect(url_for("index.home")))
         response.set_cookie("produto_id", produto)
         return response
 
@@ -68,10 +68,4 @@ def pedido_finalizado():
 def formulario():
     return render_template("pedido_finalizado.html")
 
-@validacao_compra_bp.route("/salvando_cookie", methods= ["post"])
-def salvando_cookie():
-    mesa = request.form.to_dict()
-    response = make_response(redirect(url_for("validacao_compra.validacao_compra"), code=307))
-    response.set_cookie("mesa", mesa["mesa"])
-    print(mesa)
-    return response
+
