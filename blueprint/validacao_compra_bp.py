@@ -42,7 +42,7 @@ def validacao_compra():
 
 @validacao_compra_bp.route("/carrinho")
 def carrinho():
-    carrinho = request.cookies.get("carrinho_id")
+    carrinho = request.cookies.get("mesa")
     if carrinho:
         cs = CarrinhoSchema()
         carrinho = Carrinho.query.filter(Carrinho.id == int(carrinho)).first()
