@@ -6,10 +6,11 @@ from requests import post
 validacao_compra_bp = Blueprint("validacao_compra", __name__, template_folder="templates")
 
 
-@validacao_compra_bp.route("/validacao_compra",methods= ["post"])
+@validacao_compra_bp.route("/validacao_compra",methods=["post"])
 def validacao_compra():
     carrinho= request.cookies.get("mesa") or request.form["mesa"]
     produto= request.form["produto_id"] or request.cookies.get("produto_id")
+    print(carrinho)
     if carrinho:
         carrinho= Carrinho.query.filter(Carrinho.id==int(carrinho)).first()
         produto= Produto.query.filter(Produto.id==int(produto)).first()
