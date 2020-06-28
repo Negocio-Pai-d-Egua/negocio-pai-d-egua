@@ -1,21 +1,15 @@
-import os
-import settings
-
 from flask import Flask, render_template, request, redirect, url_for
-from flask_cors import CORS
 from config.model import configure as config_db
-from config.model import create_tables
 from flask_migrate import Migrate
 from config.serealizer import configure as config_ma
 from blueprint.index_bp import index_bp
 from blueprint.carrinho_bp import carrinho_bp
 from blueprint.validacao_compra_bp import validacao_compra_bp
-from blueprint.produto_bp import produto_bp
+from blueprint.produto_bp import  produto_bp
+from blueprint.pedidos_bp import pedidos_bp
 
-app = Flask(__name__)
-
-
-DB_URL = 'postgres://luxpmkvligampc:ae64a143eff3a6c6477d28d9dd105e63e76dd28f4881f3e435134d9d4fe3aaf4@ec2-52-72-221-20.compute-1.amazonaws.com:5432/d735rkj6p1ugbl'#'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
+app=Flask(__name__)
+DB_URL = 'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="12131415", port="localhost", db="negocio")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 
@@ -23,22 +17,14 @@ app.config['SECRET_KEY'] = 'secret'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #silence the deprecation warning
 
-
 config_db(app)
 config_ma(app)
-Migrate(app, app.db)
+Migrate(app,app.db)
 app.register_blueprint(index_bp)
 app.register_blueprint(carrinho_bp)
 app.register_blueprint(validacao_compra_bp)
 app.register_blueprint(produto_bp)
-app.cli.add_command(create_tables)
+app.register_blueprint(pedidos_bp)
 
-
-def main():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-
-cors = CORS(app, resource={r"/*": {"origins": "*"}})
-
-if __name__ == "__main__":
-    main()
+if __name__=="__main__":
+    app.run(port=5000)
