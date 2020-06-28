@@ -30,7 +30,7 @@ def validacao_compra():
         return redirect(url_for("index.home"))
 
     else:
-        response = make_response(redirect(url_for("carrinho.create_carrinho", carrinho=carrinho), code=307))
+        response = make_response(render_template("formulario.html"))
         response.set_cookie("produto_id", produto)
         return response
 
