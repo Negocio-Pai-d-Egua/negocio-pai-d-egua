@@ -50,7 +50,7 @@ def carrinho():
         quantidade = 0
         for produto in carrinho.produtos:
             quantidade += 1
-            send_carr.append({"nome": produto.nome, "preco": produto.preco})
+            send_carr.append({"nome": produto.nome, "preco": produto.preco, "quantidade": produto.quantidade})
         return render_template("carrinho.html", carrinho=send_carr, total=carrinho.totalpreco)
     else:
         return render_template("carrinho.html")

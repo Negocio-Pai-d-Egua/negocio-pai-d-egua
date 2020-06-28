@@ -16,7 +16,7 @@ def create_carrinho():
     current_app.db.session.add(carrinho)
     current_app.db.session.commit()
     response=make_response(redirect(url_for("validacao_compra.validacao_compra"), code=307))
-    response.set_cookie("carrinho_id",str(carrinho.id))
+    response.set_cookie("carrinho_id", str(carrinho.id))
     return response
 
 @carrinho_bp.route("/read_carrinho")
