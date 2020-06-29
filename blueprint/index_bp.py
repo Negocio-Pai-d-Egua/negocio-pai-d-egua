@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, make_r
 from config.model import Produto, Carrinho
 
 
+
 index_bp= Blueprint("index", __name__, template_folder="templates")
 
 @index_bp.route("/")
