@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, make_response, redirect, url_for
-from config.model import Produto
+from config.model import Produto, Carrinho
 
 
 index_bp= Blueprint("index", __name__, template_folder="templates")
@@ -7,7 +7,9 @@ index_bp= Blueprint("index", __name__, template_folder="templates")
 @index_bp.route("/")
 def home():
     if request.cookies.get("mesa"):
-        return render_template("index.html")
+        carrinho = request.cookies.get("mesa")
+        carrinho = Carrinho.query.filter(Carrinho.id == int(carrinho))
+        return render_template("index.html", situacao=carrinho.situacao)
     else:
         return redirect(url_for("index.selecionar_mesa"))
 

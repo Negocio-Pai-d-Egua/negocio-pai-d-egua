@@ -55,7 +55,9 @@
                 <p class="card-text">R$ 12,00</p>
                 <form action="combinado"  method="post" enctype="multipart/form-data" >
                   <input hidden type="text" name="prato" value="7">
+                    {% if "Pendente" in situacao %}
                   <input type="submit" class="btn btn-primary" value="Visualizar" ></input>
+                    {% endif %}
                 </form>
               </div>
             </div>
@@ -68,7 +70,9 @@
                 <p class="card-text">R$ 8,00</p>
                 <form action="combinado"  method="post" enctype="multipart/form-data" >
                   <input hidden type="text" name="prato" value="8">
-                  <input type="submit"  class="btn btn-primary" value="Visualizar" ></input>
+                    {% if "Pendente" in situacao %}
+                  <input type="submit" class="btn btn-primary" value="Visualizar" ></input>
+                    {% endif %}
                 </form>
               </div>
             </div>
@@ -81,7 +85,9 @@
                 <p class="card-text">R$ 5,00</p>
                 <form action="combinado"  method="post" enctype="multipart/form-data" >
                   <input hidden type="text" name="prato" value="9">
-                  <input type="submit"  class="btn btn-primary" value="Visualizar" ></input>
+                    {% if "Pendente" in situacao %}
+                  <input type="submit" class="btn btn-primary" value="Visualizar" ></input>
+                    {% endif %}
                 </form>
               </div>
             </div>
@@ -94,7 +100,9 @@
                 <p class="card-text">R$ 4,00</p>
                 <form action="combinado"  method="post" enctype="multipart/form-data" >
                   <input hidden type="text" name="prato" value="10">
-                  <input type="submit"  class="btn btn-primary" value="Visualizar"></input>
+                    {% if "Pendente" in situacao %}
+                  <input type="submit" class="btn btn-primary" value="Visualizar" ></input>
+                    {% endif %}
                 </form>
               </div>
             </div>
@@ -107,7 +115,9 @@
                 <p class="card-text">R$ 11,00</p>
                 <form action="combinado"  method="post" enctype="multipart/form-data" >
                   <input hidden type="text" name="prato" value="11">
-                  <input type="submit"  class="btn btn-primary" value="Visualizar" ></input>
+                    {% if "Pendente" in situacao %}
+                  <input type="submit" class="btn btn-primary" value="Visualizar" ></input>
+                    {% endif %}
                 </form>
               </div>
             </div>
@@ -120,7 +130,9 @@
                 <p class="card-text">R$ 12,00</p>
                 <form action="combinado"  method="post" enctype="multipart/form-data" >
                   <input hidden type="text" name="prato" value="12">
-                  <input type="submit"  class="btn btn-primary" value="Visualizar"></input>
+                    {% if "Pendente" in situacao %}
+                  <input type="submit" class="btn btn-primary" value="Visualizar" ></input>
+                    {% endif %}
                 </form>
               </div>
             </div>
