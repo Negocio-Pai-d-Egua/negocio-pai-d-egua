@@ -1,5 +1,12 @@
 # Negócio Pai d'Égua
 
+# Links:
+  Link para o cardápio:
+  http://negocio-pai-d-egua.herokuapp.com/
+  
+  Link para gestão dos pedidos:
+  http://negocio-pai-d-egua.herokuapp.com/mostrar_pedido
+
 # Descrição:
 
 * CONTEXTO
