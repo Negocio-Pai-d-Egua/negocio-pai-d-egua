@@ -9,16 +9,16 @@
 
 # Descrição:
 
-* CONTEXTO
+* CONTEXTO:
     Devido ao atual cenário mundial com a pandemia de covid-19 e por conta disto, a necessidade do 
  isolamento social. Por conta disso os negócios presenciais - sejam estes pequenos, médios ou grandes -
  precisaram se adaptar a esta situação para que não correcem o risco de ir a falência.
 
-* JUSTIFICATIVA
+* JUSTIFICATIVA:
     Visando o contexto citado, o projeto Negócio Pai d'Égua visa auxiliar os pequenos negócios tais como
     lanchonetes e pequenos restaurantes como forma de ajudar na econômia local.
 
-* OBJETIVO
+* OBJETIVO:
     O projeto Negócio Pai d'Égua tem como objetivo simplificar o 
 atendimento em pequenos estabelecimentos de vendas de lanches 
 de rua por meio de uma app e um dispositivo de ponto de acesso
