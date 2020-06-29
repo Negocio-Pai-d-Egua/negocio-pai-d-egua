@@ -1,10 +1,10 @@
 # Negócio Pai d'Égua
 
 # Links:
-  Link para o cardápio:
+  * Link para o cardápio: 
   http://negocio-pai-d-egua.herokuapp.com/
   
-  Link para gestão dos pedidos:
+  * Link para gestão dos pedidos: 
   http://negocio-pai-d-egua.herokuapp.com/mostrar_pedido
 
 # Descrição:
@@ -23,21 +23,18 @@
 atendimento em pequenos estabelecimentos de vendas de lanches 
 de rua por meio de uma app e um dispositivo de ponto de acesso
  à Internet.
-* **Como?**
-    - Por meio do app que fará a leitura de um QRCode que deverá ser 
+
+# Funções:
+  * Por meio do app que fará a leitura de um QRCode que deverá ser 
 impresso e fixado nas mesas dos estabelecimentos. Com o QRCode, 
 o app irá carregar o cardápio digital vinculado à mesa do 
 estabelecimento, facilitando assim um melhor controle dos 
 pedidos e evitando a necessidade de uma funcionário atendente. 
-    - O dispositivo do ponto de acesso irá prover Internet gratuita 
+  * O dispositivo do ponto de acesso irá prover Internet gratuita 
 aos frequentadores do estabelecimento.
-
-# Funções:
-  * Website para cliente do estabelecimento:    
-    - Cardápio digital;
-    
+   
 # Utilitários:
-  - Raspberry pi 3  
+  - Raspberry pi 3
   
 # Integrantes do Projeto:
   - Marcos Aguiar Parente(aguiar.marcos20@gmail.com)
