@@ -37,7 +37,7 @@ aos frequentadores do estabelecimento.
   - Raspberry pi 3
   
 # Integrantes do Projeto:
-  - Marcos Aguiar Parente(aguiar.marcos20@gmail.com)
-  - Marcelo Saldanha Filho(marcelosfilho1997@gmail.com)
-  - Matheus Lopes da Silva(matheuslopesteco@gmail.com)
-  - Otávio Araújo da silva(otavioaraujo490@gmail.com)
+  - Marcos Aguiar Parente  (aguiar.marcos20@gmail.com)
+  - Marcelo Saldanha Filho (marcelosfilho1997@gmail.com)
+  - Matheus Lopes da Silva (matheuslopesteco@gmail.com)
+  - Otávio Araújo da silva (otavioaraujo490@gmail.com)
