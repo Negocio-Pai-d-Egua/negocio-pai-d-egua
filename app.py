@@ -15,7 +15,7 @@ from blueprint.produto_bp import produto_bp
 app = Flask(__name__)
 
 
-DB_URL = 'postgres://luxpmkvligampc:ae64a143eff3a6c6477d28d9dd105e63e76dd28f4881f3e435134d9d4fe3aaf4@ec2-52-72-221-20.compute-1.amazonaws.com:5432/d735rkj6p1ugbl'#'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
+DB_URL = 'postgres://zypyrladebcvmm:fcdd9478c25d1160286f2d700353657cc4c82402815714ce221261c770abcace@ec2-54-234-28-165.compute-1.amazonaws.com:5432/dfd3av607d2o9r'#'postgresql+psycopg2://{user}:{passw}@{port}/{db}'.format(user="postgres", passw="paidegua;", port="localhost", db="postgres")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 

@@ -15,7 +15,7 @@ html, body{
 .container-body{
    display: grid;
    grid-template-columns: 1fr;
-   grid-template-rows: 0.1fr 5fr 1fr; 
+   grid-template-rows: 0.1fr 5fr 0.4fr; 
    grid-template-areas: "header header"
                        "main main"
                        "footer footer";
@@ -71,13 +71,26 @@ nav a{
 }
 
 #titulo {
+/*    justify-self: center;
  */   text-align: center;
    color: black;
    font-size: 3.0rem;
  }
 
 
+/* h1{
+   text-align: left;
+} */
+form{
+   justify-self: center;
+   text-align: justify;
+   width: 80%;
+}
 
+/* div{
+   display: block;
+   width: 30%
+} */
 
 label{
    text-align: center;
