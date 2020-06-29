@@ -23,7 +23,6 @@ def read_produto():
     result= Produto.query.all()
     return ps.jsonify(result)
 
-
 @produto_bp.route("/update_produto")
 def update_produto():
     id= request.args.get('id')

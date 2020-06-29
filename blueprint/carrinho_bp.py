@@ -19,7 +19,6 @@ def create_carrinho():
     response.set_cookie("carrinho_id", str(carrinho.id))
     return response
 
-
 @carrinho_bp.route("/read_carrinho")
 def read_carrinho():
     cs=CarrinhoSchema(many=True)
