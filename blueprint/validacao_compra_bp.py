@@ -64,6 +64,7 @@ def pedido_finalizado():
     current_app.db.session.commit()
     return render_template("pedido_finalizado.html")
 
+
 @validacao_compra_bp.route("/formulario", methods= ["post"])
 def formulario():
     return render_template("pedido_finalizado.html")
