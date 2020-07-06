@@ -34,30 +34,30 @@
       </header>
       <main>
 
+        <center>
+          <form action="/salvando_cookie" method="post" enctype="multipart/form-data">
+            <div class="form-position">
+              <br><br>
+              <h2 id="titulo">Sua mesa</h2>
 
-        <form action="/salvando_cookie" method="post" enctype="multipart/form-data">
-          <div class="form-position">
-            <br><br>
-            <h2 id="titulo">Sua mesa</h2>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Marque o número de sua mesa</label>
+                  <input type="text" name="produto_id" value="{{ produto_id }}" hidden/>
+                <select class="form-control" name="mesa" id="exampleFormControlSelect1" required>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
 
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Marque o número de sua mesa</label>
-                <input type="text" name="produto_id" value="{{ produto_id }}" hidden/>
-              <select class="form-control" name="mesa" id="exampleFormControlSelect1" required>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-
-              </select>
+                </select>
+              </div>
+              <div align=center>
+                <input type="submit"  class="btn btn-primary" value="Continuar"></input><br><br>
+              </div>
             </div>
-            <div align=center>
-              <input type="submit"  class="btn btn-primary" value="Continuar"></input><br><br>
-            </div>
-          </div>
 
-        </form>
-
+          </form>
+        </center>
 
 
 
